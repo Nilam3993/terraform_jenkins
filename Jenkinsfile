@@ -50,16 +50,9 @@ pipeline {
 
                     echo "User input: ${userInput}" // Print out the userInput variable for debugging
 
-                    // Get user input and assign it to terraformAction variable
-                    //def terraformAction = userInput.TerraAction?:''
-
-                    // Validate user input
-                    if ("${userInput}" == 'apply' || "${userInput}" == 'destroy') {
-                        echo "Executing Terraform ${userInput}..."
-                        sh "terraform ${userInput} -auto-approve"
-                    } else {
-                        error "Invalid Terraform action selected: ${userInput}"
-                    }
+                    // Execute Terraform command based on user input
+                    echo "Executing Terraform ${userInput}..."
+                    sh "terraform ${userInput} -auto-approve"
                 }
             }
         }
