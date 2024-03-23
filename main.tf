@@ -12,7 +12,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "this_ec2" {
-    ami = "ami-007020fd9c84e18c7"
+    ami = "ami-05295b6e6c790593e"
     instance_type = "t2.micro"
     key_name = "aws_web_key"
   
